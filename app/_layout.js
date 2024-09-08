@@ -2,6 +2,7 @@ import { Stack } from "expo-router";
 import { useCallback } from "react";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { View } from "react-native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -14,13 +15,17 @@ const Layout = () => {
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
-      await SplashScreen.hideAsync();
+      await SplashScreen.hideAsync(); //SplashScreen'i gizle
     }
   }, [fontsLoaded]);
 
-  if (!fontsLoaded) return null;
+  if (!fontsLoaded) return null; // Fontlar yüklenmeden bileşenleri render etme
 
-  return <Stack onLayout={onLayoutRootView} />;
+  return (
+    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <Stack />
+    </View>
+  );
 };
 
 export default Layout;
