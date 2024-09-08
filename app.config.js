@@ -10,7 +10,7 @@ export default {
     },
     plugins: ["expo-router"],
     extra: {
-      RAPID_API_KEY: process.env.RAPID_API_KEY, // Ortam değişkenini buraya ekleyin
+      RAPID_API_KEY: process.env.RAPID_API_KEY,
     },
   },
 };
