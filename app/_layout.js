@@ -15,11 +15,11 @@ const Layout = () => {
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
-      await SplashScreen.hideAsync(); //SplashScreen'i gizle
+      await SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
 
-  if (!fontsLoaded) return null; // Fontlar yüklenmeden bileşenleri render etme
+  if (!fontsLoaded) return null; //Fontlar yüklenmeden bileşenleri render etme
 
   return (
     <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
